@@ -16,7 +16,7 @@ Terminal3d (`t3d`) is a tool for viewing 3d `.obj` files, right in your terminal
 - Use mouse controls to view your model, just like any other 3d software.
 
 ## Installation
-Installing Terminal3d can be done via brew, crates.io, or from source.
+Installing Terminal3d can be done via brew, crates.io, nix, or from source.
 
 ### From brew
 To install Terminal3d with brew, install from [this tap](https://github.com/liam-ilan/homebrew-terminal3d).
@@ -38,6 +38,27 @@ cargo install terminal3d
 You will be able to invoke the binary as `t3d`. Render a `.obj` file with
 ```sh
 t3d <filepath.obj>
+```
+
+### From nix
+Terminal3d can be built and executed with [nix](https://nixos.org/). If you have a nix setup, it's straightforward. 
+
+Note: t3d has no release or tag yet, the `default.nix` defaults to HEAD.
+
+You can execute it once you've download or cloned this repository, and built it as below.
+
+```sh
+git clone https://github.com/liam-ilan/terminal3d.git
+```
+
+```sh
+cd terminal3d
+nix build -f default.nix
+```
+
+You will be able to invoke the binary as `t3d`. Render a `.obj` file with
+```sh
+result/bin/t3d <filepath.obj>
 ```
 
 ### From Source
